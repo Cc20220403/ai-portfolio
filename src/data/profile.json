@@ -1,0 +1,18 @@
+{
+  "name": "AI Portfolio",
+  "title": "AI 编程学习者",
+  "avatar": "",
+  "bio": "热爱 AI 编程，专注于探索人工智能与软件开发的交汇点。这里记录了我的学习旅程和各类实践项目。",
+  "socialLinks": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/Cc20220403",
+      "icon": "github"
+    },
+    {
+      "platform": "Email",
+      "url": "mailto:hello@example.com",
+      "icon": "mail"
+    }
+  ]
+}

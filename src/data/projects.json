@@ -1,0 +1,46 @@
+[
+  {
+    "id": "vibe-coding-runoob",
+    "title": "Vibe Coding 智能看板",
+    "description": "基于 Vue 3 + TypeScript 构建的看板式任务管理工具，支持列表/看板双视图、拖拽排序和深色模式。",
+    "fullDescription": "基于 Vue 3 Composition API + TypeScript + Tailwind CSS 构建的全功能任务管理应用。采用响应式设计，支持列表视图与看板视图一键切换，拖拽任务卡片自动更新状态，三级优先级颜色标识，以及 LocalStorage 自动持久化数据。内置深色/浅色主题切换，适配移动端布局。",
+    "image": "/kanban-board-view.png",
+    "screenshots": [
+      "/kanban-list-view.png",
+      "/kanban-board-view.png",
+      "/kanban-dark-mode.png"
+    ],
+    "tags": ["Vue 3", "TypeScript", "Tailwind CSS", "Vite", "Composition API"],
+    "category": "Web应用",
+    "githubUrl": "https://github.com/Cc20220403/vibe-coding-runoob",
+    "demoUrl": "https://Cc20220403.github.io/vibe-coding-runoob/",
+    "features": [
+      "列表视图与看板视图一键切换",
+      "拖拽任务卡片自动更新状态",
+      "三级优先级（低/中/高）颜色标识",
+      "新建/完成/删除任务完整 CRUD 流程",
+      "二次点击确认删除防误操作",
+      "LocalStorage 自动持久化",
+      "深色/浅色主题切换",
+      "响应式布局适配移动端"
+    ],
+    "featured": true,
+    "date": "2026-09"
+  },
+  {
+    "id": "coming-soon-1",
+    "title": "AI 智能对话助手",
+    "description": "基于大语言模型的对话应用项目，正在开发中...",
+    "fullDescription": "一个基于大语言模型构建的智能对话应用，计划支持多轮对话、上下文记忆和流式输出。目前处于规划阶段。",
+    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
+    "screenshots": [],
+    "tags": ["React", "Python", "LangChain"],
+    "category": "AI应用",
+    "features": [
+      "多轮对话与上下文记忆",
+      "流式输出实时响应",
+      "对话历史记录管理"
+    ],
+    "date": "即将推出"
+  }
+]
