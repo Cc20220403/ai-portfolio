@@ -8,6 +8,13 @@ interface Props {
   onClose: () => void
 }
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+
+function resolveImg(src: string) {
+  if (src.startsWith('http') || src.startsWith('data:')) return src
+  return base + src
+}
+
 export default function ProjectModal({ project, onClose }: Props) {
   const [activeScreenshot, setActiveScreenshot] = useState(0)
 
@@ -39,6 +46,7 @@ export default function ProjectModal({ project, onClose }: Props) {
   if (!project) return null
 
   const allImages = project.screenshots.length > 0 ? project.screenshots : [project.image]
+  const resolvedImages = allImages.map(resolveImg)
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8">
@@ -63,7 +71,7 @@ export default function ProjectModal({ project, onClose }: Props) {
         <div className="relative">
           <div className="aspect-video bg-[var(--bg-primary)] overflow-hidden rounded-t-2xl">
             <img
-              src={allImages[activeScreenshot]}
+              src={resolvedImages[activeScreenshot]}
               alt={`${project.title} screenshot ${activeScreenshot + 1}`}
               className="w-full h-full object-contain"
             />
@@ -92,7 +100,7 @@ export default function ProjectModal({ project, onClose }: Props) {
           {/* Thumbnail strip */}
           {allImages.length > 1 && (
             <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-              {allImages.map((_, idx) => (
+              {resolvedImages.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveScreenshot(idx)}
