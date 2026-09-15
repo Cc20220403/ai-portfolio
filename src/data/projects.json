@@ -28,6 +28,29 @@
     "date": "2026-09"
   },
   {
+    "id": "weather-query",
+    "title": "天气查询 Web 应用",
+    "description": "React + TypeScript + Tailwind CSS 打造的实时天气查询应用，集成 Open-Meteo 免费 API，支持城市搜索、自动定位和城市收藏。",
+    "fullDescription": "一个功能完整的天气查询 Web 应用，采用 React 19 + TypeScript + Zustand + Tailwind CSS v4 技术栈。集成 Open-Meteo 免费天气 API（无需 API Key），支持城市搜索（防抖 + 下拉候选）、浏览器 Geolocation 自动定位、3 天天气预报、城市收藏（LocalStorage 持久化）。具备完善的错误处理（6 种错误类型友好提示）和加载状态管理，采用竞态条件处理确保快速切换城市时数据准确。Glassmorphism 毛玻璃 UI 设计，响应式布局适配移动端。",
+    "image": "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
+    "screenshots": [],
+    "tags": ["React 19", "TypeScript", "Zustand", "Tailwind CSS v4", "Vite", "Open-Meteo API"],
+    "category": "Web应用",
+    "githubUrl": "https://github.com/Cc20220403/weather-query",
+    "demoUrl": "https://Cc20220403.github.io/weather-query/",
+    "features": [
+      "城市搜索防抖 + 下拉候选列表，支持中英文",
+      "浏览器 Geolocation API 自动定位",
+      "当前天气 + 3 天预报，WMO 天气代码映射",
+      "城市收藏功能，LocalStorage 持久化存储",
+      "6 种错误类型友好提示 + 重试机制",
+      "加载动画 + 竞态条件处理",
+      "Glassmorphism 毛玻璃 UI + 响应式布局",
+      "Open-Meteo 免费 API，无需 API Key"
+    ],
+    "date": "2026-09"
+  },
+  {
     "id": "coming-soon-1",
     "title": "AI 智能对话助手",
     "description": "基于大语言模型的对话应用项目，正在开发中...",
