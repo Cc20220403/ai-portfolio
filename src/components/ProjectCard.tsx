@@ -46,6 +46,7 @@ export default function ProjectCard({ project, onViewDetail }: Props) {
             Featured
           </span>
         )}
+        {/* 注意：featured 标记由 projects.json 中的 "featured": true 控制，当前项目已移除该字段 */}
 
         {/* Navigation arrows */}
         {images.length > 1 && (
