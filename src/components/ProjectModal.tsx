@@ -18,18 +18,22 @@ function resolveImg(src: string) {
 export default function ProjectModal({ project, onClose }: Props) {
   const [activeScreenshot, setActiveScreenshot] = useState(0)
 
+  const allImages = (project?.screenshots?.length ?? 0) > 0 ? project!.screenshots : project ? [project.image] : []
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
       if (!project) return
-      if (e.key === 'ArrowLeft' && activeScreenshot > 0) {
-        setActiveScreenshot((prev) => prev - 1)
+      const total = allImages.length
+      if (total <= 1) return
+      if (e.key === 'ArrowLeft') {
+        setActiveScreenshot((prev) => (prev > 0 ? prev - 1 : total - 1))
       }
-      if (e.key === 'ArrowRight' && project.screenshots.length > 0 && activeScreenshot < project.screenshots.length - 1) {
-        setActiveScreenshot((prev) => prev + 1)
+      if (e.key === 'ArrowRight') {
+        setActiveScreenshot((prev) => (prev < total - 1 ? prev + 1 : 0))
       }
     },
-    [onClose, project, activeScreenshot]
+    [onClose, project, allImages.length]
   )
 
   useEffect(() => {
@@ -45,7 +49,6 @@ export default function ProjectModal({ project, onClose }: Props) {
 
   if (!project) return null
 
-  const allImages = project.screenshots.length > 0 ? project.screenshots : [project.image]
   const resolvedImages = allImages.map(resolveImg)
 
   return (
@@ -81,16 +84,14 @@ export default function ProjectModal({ project, onClose }: Props) {
           {allImages.length > 1 && (
             <>
               <button
-                onClick={() => setActiveScreenshot((prev) => prev - 1)}
-                disabled={activeScreenshot === 0}
-                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 text-white disabled:opacity-30 hover:bg-black/70 transition-colors"
+                onClick={() => setActiveScreenshot((prev) => (prev > 0 ? prev - 1 : allImages.length - 1))}
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors z-10"
               >
                 <ChevronLeft size={20} />
               </button>
               <button
-                onClick={() => setActiveScreenshot((prev) => prev + 1)}
-                disabled={activeScreenshot === allImages.length - 1}
-                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 text-white disabled:opacity-30 hover:bg-black/70 transition-colors"
+                onClick={() => setActiveScreenshot((prev) => (prev < allImages.length - 1 ? prev + 1 : 0))}
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors z-10"
               >
                 <ChevronRight size={20} />
               </button>
@@ -99,16 +100,17 @@ export default function ProjectModal({ project, onClose }: Props) {
 
           {/* Thumbnail strip */}
           {allImages.length > 1 && (
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-              {resolvedImages.map((_, idx) => (
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              {allImages.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveScreenshot(idx)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all ${
+                  className={`rounded-full transition-all ${
                     idx === activeScreenshot
-                      ? 'bg-white scale-110'
-                      : 'bg-white/40 hover:bg-white/60'
+                      ? 'w-6 h-2.5 bg-white'
+                      : 'w-2.5 h-2.5 bg-white/40 hover:bg-white/60'
                   }`}
+                  aria-label={`查看第 ${idx + 1} 张截图`}
                 />
               ))}
             </div>
