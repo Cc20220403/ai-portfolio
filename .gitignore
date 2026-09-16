@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Temporary files
+temporary_file/*
+!temporary_file/.gitkeep
