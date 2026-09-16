@@ -4,8 +4,13 @@
     "title": "个人博客系统",
     "description": "全栈博客系统，支持 Markdown 编辑、草稿管理、评论互动、点赞、归档、RSS 订阅和 SEO 优化。",
     "fullDescription": "基于 React 18 + TypeScript + Vite（前端）和 Node.js + Express + MySQL（后端）的全栈博客系统。功能涵盖用户认证（JWT）、文章 CRUD、Markdown 编辑器、草稿/发布状态管理、图片上传、分类筛选、评论嵌套回复（分页加载）、点赞（事务防竞态）、按月归档、RSS 2.0 订阅源、SEO 动态标签（react-helmet-async）。后端采用 helmet 安全头、接口限速、optionalAuth 可选认证中间件，代码经过完整安全审查与性能优化。",
-    "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop",
-    "screenshots": [],
+    "image": "/blog-homepage.png",
+    "screenshots": [
+      "/blog-homepage.png",
+      "/blog-write.png",
+      "/blog-post-likes.png",
+      "/blog-post-comments.png"
+    ],
     "tags": ["React 18", "TypeScript", "Node.js", "Express", "MySQL", "Vite"],
     "category": "全栈应用",
     "githubUrl": "https://github.com/Cc20220403/blog-system",
