@@ -79,19 +79,26 @@
     "date": "2026-09"
   },
   {
-    "id": "coming-soon-1",
+    "id": "ai-chat-assistant",
     "title": "AI 智能对话助手",
-    "description": "基于大语言模型的对话应用项目，正在开发中...",
-    "fullDescription": "一个基于大语言模型构建的智能对话应用，计划支持多轮对话、上下文记忆和流式输出。目前处于规划阶段。",
+    "description": "基于阿里云百炼大模型的对话应用，支持多会话管理、流式输出、Markdown 渲染和深色模式。",
+    "fullDescription": "基于 React 19 + TypeScript + Zustand + Tailwind CSS v4 构建的 AI 对话应用。接入阿里云百炼 API（Qwen 模型），通过 SSE 实现流式输出。支持多会话独立管理（侧边栏常驻、搜索过滤、置顶、批量删除），Markdown 渲染 + 代码语法高亮（Prism 按需加载 9 种语言）。对话历史通过 LocalStorage 持久化，支持深色/浅色主题切换。采用 requestAnimationFrame 节流流式渲染，确保 60fps 流畅体验。",
     "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
     "screenshots": [],
-    "tags": ["React", "Python", "LangChain"],
+    "tags": ["React 19", "TypeScript", "Zustand", "Tailwind CSS v4", "Vite", "阿里云百炼 API"],
     "category": "AI应用",
+    "githubUrl": "https://github.com/Cc20220403/ai-chat-assistant",
+    "demoUrl": "",
     "features": [
-      "多轮对话与上下文记忆",
-      "流式输出实时响应",
-      "对话历史记录管理"
+      "接入阿里云百炼 Qwen 模型，SSE 流式输出实时响应",
+      "多会话管理：侧边栏常驻、搜索过滤、置顶、批量删除",
+      "Markdown 渲染 + 代码语法高亮（Prism 按需加载）",
+      "对话历史 LocalStorage 持久化，刷新不丢失",
+      "深色/浅色主题切换",
+      "requestAnimationFrame 节流渲染，确保 60fps 流畅",
+      "空状态预置示例问题，点击即可发送",
+      "GitHub Actions 自动部署到 GitHub Pages"
     ],
-    "date": "即将推出"
+    "date": "2026-09"
   }
 ]
